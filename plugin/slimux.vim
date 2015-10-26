@@ -344,7 +344,7 @@ endfunction
 
 command! SlimuxREPLSendLine call SlimuxSendCode(getline(".") . "\n")
 command! SlimuxREPLSendParagraph call SlimuxSendCode(s:GetParagraph())
-command! -range=% -bar -nargs=* SlimuxREPLSendSelection call SlimuxSendCode(s:GetVisual())
+command! -range=% -bar -nargs=* SlimuxREPLSendSelection call SlimuxSendCode(s:GetVisual() . "\n")
 command! -range -bar -nargs=0 SlimuxREPLSendLine <line1>,<line2>call s:SlimeSendRange()
 command! -range=% -bar -nargs=* SlimuxREPLSendBuffer call SlimuxSendCode(s:GetBuffer())
 command! SlimuxREPLConfigure call SlimuxConfigureCode()
